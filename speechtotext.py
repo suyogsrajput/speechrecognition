@@ -2,6 +2,7 @@
 import speech_recognition as sr
 import tkinter as tk
 from tkinter import *
+import os
 
 
 #Initialized window
@@ -38,7 +39,7 @@ def rec():
         # Speech recognition using Google Speech Recognition
         try:
             txt = r.recognize_google(audio, language = 'en-US')
-            msg.configure(text=txt)
+            msg.configure(text=txt)        
             print(txt)
         except Exception as ex:
             print(ex)
@@ -48,7 +49,7 @@ def texttospeech():
     ts.texttospeech
     
 def Exit():
-    root.destroy()
+    obj.destroy()
 
 
 #Button
