@@ -1,33 +1,30 @@
-## import libraries
-
+#import libraries
 from tkinter import *
 from gtts import gTTS
 from playsound import playsound
 import speech_recognition as sr
+import os
 
 
-################### Initialized window####################
-
+#Initialized window
 root = Tk()
 root.geometry('450x400')
 root.resizable(0,0)
 root.config(bg = 'slate blue')
-root.title('Speech Recognization')
+root.title('Speech Recognition')
 
 
 ##heading
-Label(root, text = 'Text to Speech' , font='times 20 bold' , bg ='slate blue').pack()
+Label(root, text = 'Text to Speech' , font='times 20 bold underline' , bg ='slate blue').pack()
 Label(root, text ='Suyog Singh Rajput' , font ='times 12 bold', bg = 'slate blue').pack(side = BOTTOM)
 Label(root, text ='LN18BTCS1020' , font ='times 10 bold', bg = 'slate blue').pack(side = BOTTOM)
-
-
 
 
 #label
 Label(root, text ='Enter Text', font ='times 15 bold', bg ='slate blue').place(x=20,y=60)
 
 
-##text variable
+#text variable
 Msg = StringVar()
 
 
@@ -36,7 +33,7 @@ entry_field = Entry(root,textvariable =Msg, width ='60')
 entry_field.place(x=20 , y=100)
 
 
-###################define function##############################
+#define function
 def texttospeech():
     Message = entry_field.get()
     speech = gTTS(text = Message)
@@ -45,9 +42,12 @@ def texttospeech():
 
 def Exit():
     root.destroy()
+    os.remove('speech.mp3')
 
 def Reset():
     Msg.set("")
+    os.remove('speech.mp3')
+
 
 #Button
 Button(root, text = "PLAY" , font = 'times 15 bold', command = texttospeech, bg = 'MediumOrchid1').place(x=25, y=150)
