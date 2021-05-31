@@ -9,7 +9,7 @@ import os
 #Initialized window
 root = Tk()
 root.geometry('450x400')
-root.resizable(0,0)
+root.config(cursor="hand2")
 root.config(bg = 'slate blue')
 root.title('Speech Recognition')
 
@@ -21,7 +21,7 @@ Label(root, text ='LN18BTCS1020' , font ='times 10 bold', bg = 'slate blue').pac
 
 
 #label
-Label(root, text ='Enter Text', font ='times 15 bold', bg ='slate blue').place(x=20,y=60)
+Label(root, text ='Enter Text-', font ='times 15 bold', bg ='slate blue').place(x=20,y=60)
 
 
 #text variable
@@ -47,13 +47,21 @@ def Exit():
 def Reset():
     Msg.set("")
     os.remove('speech.mp3')
-
-
+    
+def texttospeech():
+    root.destroy()
+    import texttospeech as ts
+    ts.texttospeech
+    
+def main():
+    root.destroy()
+    import main
 #Button
 Button(root, text = "PLAY" , font = 'times 15 bold', command = texttospeech, bg = 'MediumOrchid1').place(x=25, y=150)
-Button(root,text = 'EXIT',font = 'times 15 bold' , command = Exit, bg = 'firebrick1').place(x=190 , y =150)
+Button(root,text = 'EXIT',font = 'times 15 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=190 , y =150)
 Button(root, text = 'RESET', font='times 15 bold', command = Reset, bg = 'MediumOrchid1').place(x=102,y=150)
-
+Button(root, text = "Text To Speech" , font = 'times 16 bold', command = texttospeech, bg = 'MediumOrchid1',fg  = "white").place(x=25, y=200)
+Button(root,text = 'Main Menu',font = 'times 15 bold' , command = main, bg = 'MediumOrchid1',fg  = "white").place(x=190 , y =200)
 
 #infinite loop to run program
 root.mainloop()

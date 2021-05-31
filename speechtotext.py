@@ -9,7 +9,7 @@ import os
 obj = tk.Tk()
 obj.title("Speech Recognition")
 obj.geometry('450x400')
-obj.resizable(0,0)
+obj.config(cursor="hand2")
 obj.config(bg = 'SlateBlue1')
 
 
@@ -45,17 +45,21 @@ def rec():
             print(ex)
             break
 def texttospeech():
+    obj.destroy()
     import texttospeech as ts
     ts.texttospeech
-    
+def main():
+    obj.destroy()
+    import main
 def Exit():
     obj.destroy()
 
 
 #Button
 Button(obj, text = "Start" , font = 'times 16 bold', command = rec, bg = 'medium orchid').place(x=180, y=140)
-Button(obj,text = 'EXIT',font = 'times 14 bold' , command = Exit, bg = 'firebrick1').place(x=180 , y =240)
-Button(obj, text = 'Text To Speech', font='times 14 bold', command = texttospeech, bg = 'medium orchid').place(x=137,y=190)
+Button(obj, text = 'Text To Speech', font='times 14 bold', command = texttospeech, bg = 'medium orchid',fg  = "white").place(x=37,y=190)
+Button(obj, text = "Main Menu" , font = 'times 14 bold', command = main, bg = 'medium orchid',fg  = "white").place(x=243, y=190)
+Button(obj,text = 'EXIT',font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=180 , y =240)
 
 
 #infinite loop to run program
