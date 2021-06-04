@@ -9,14 +9,15 @@ import os
 obj = tk.Tk()
 obj.title("Speech Recognition")
 obj.geometry('450x400')
-obj.config(cursor="hand2")
+obj.iconbitmap('voice.ico')
+obj.resizable(False, False)
 obj.config(bg = 'SlateBlue1')
 
 
 #heading
-Label(obj, text = 'Speech To Text' , font='times 25 bold underline' , bg ='SlateBlue1').pack()
-Label(obj, text ='Suyog Singh Rajput' , font ='times 12 bold', bg = 'SlateBlue1').pack(side = BOTTOM)
-Label(obj, text ='LN18BTCS1020' , font ='times 10 bold', bg = 'SlateBlue1').pack(side = BOTTOM)
+Label(obj, text = 'Speech To Text' ,cursor="xterm", font='times 25 bold underline' , bg ='SlateBlue1').pack()
+Label(obj, text ='Suyog Singh Rajput' ,cursor="xterm", font ='times 12 bold', bg = 'SlateBlue1').pack(side = BOTTOM)
+Label(obj, text ='LN18BTCS1020' ,cursor="xterm", font ='times 10 bold', bg = 'SlateBlue1').pack(side = BOTTOM)
 
 
 #text variable
@@ -56,10 +57,10 @@ def Exit():
 
 
 #Button
-Button(obj, text = "Start" , font = 'times 16 bold', command = rec, bg = 'medium orchid').place(x=180, y=140)
-Button(obj, text = 'Text To Speech', font='times 14 bold', command = texttospeech, bg = 'medium orchid',fg  = "white").place(x=37,y=190)
-Button(obj, text = "Main Menu" , font = 'times 14 bold', command = main, bg = 'medium orchid',fg  = "white").place(x=243, y=190)
-Button(obj,text = 'EXIT',font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=180 , y =240)
+Button(obj, text = "Start" ,cursor="hand2", font = 'times 16 bold', command = rec, bg = 'medium orchid').place(x=180, y=140)
+Button(obj, text = 'Text To Speech',cursor="hand2", font='times 14 bold', command = texttospeech, bg = 'medium orchid',fg  = "white").place(x=37,y=190)
+Button(obj, text = "Main Menu" ,cursor="hand2", font = 'times 14 bold', command = main, bg = 'medium orchid',fg  = "white").place(x=243, y=190)
+Button(obj,text = 'EXIT',cursor="hand2",font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=180 , y =240)
 
 
 #infinite loop to run program
