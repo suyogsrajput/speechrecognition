@@ -8,9 +8,8 @@ import os
 #Initialized window
 obj = tk.Tk()
 obj.title("Speech Recognition")
-obj.geometry('450x400')
+obj.geometry('500x500')
 obj.iconbitmap('voice.ico')
-obj.resizable(False, False)
 obj.config(bg = 'SlateBlue1')
 
 
@@ -21,10 +20,8 @@ Label(obj, text ='LN18BTCS1020' ,cursor="xterm", font ='times 10 bold', bg = 'Sl
 
 
 #text variable
-msg = tk.Label(obj, bg ='white')
-
-msg.place(x=20 , y=100)
-
+msg = tk.Label(obj)
+msg.pack(pady=50)
 
 #define function
 def rec():
@@ -57,10 +54,10 @@ def Exit():
 
 
 #Button
-Button(obj, text = "Start" ,cursor="hand2", font = 'times 16 bold', command = rec, bg = 'medium orchid').place(x=180, y=140)
-Button(obj, text = 'Text To Speech',cursor="hand2", font='times 14 bold', command = texttospeech, bg = 'medium orchid',fg  = "white").place(x=37,y=190)
-Button(obj, text = "Main Menu" ,cursor="hand2", font = 'times 14 bold', command = main, bg = 'medium orchid',fg  = "white").place(x=243, y=190)
-Button(obj,text = 'EXIT',cursor="hand2",font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=180 , y =240)
+Button(obj, text = "Start" ,cursor="hand2", font = 'times 16 bold', command = rec, bg = 'medium orchid').pack(pady=5)
+Button(obj, text = 'Text To Speech',cursor="hand2", font='times 14 bold', command = texttospeech, bg = 'medium orchid',fg  = "white").pack(pady=5)
+Button(obj, text = "Main Menu" ,cursor="hand2", font = 'times 14 bold', command = main, bg = 'medium orchid',fg  = "white").pack(pady=5)
+Button(obj,text = 'EXIT',cursor="hand2",font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").pack(pady=5)
 
 
 #infinite loop to run program

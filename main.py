@@ -10,7 +10,6 @@ import os
 root = Tk()
 root.geometry('450x400')
 root.iconbitmap('voice.ico')
-root.resizable(False, False)
 root.config(bg = 'SlateBlue1')
 root.title('Speech Recognition')
 
@@ -22,7 +21,7 @@ Label(root, text ='LN18BTCS1020' ,cursor="xterm", font ='times 10 bold', bg = 'S
 
 
 #label
-Label(root, text ='!!Choose!!',cursor="xterm", font ='times 20 bold underline', bg ='SlateBlue1',fg  = "blue").place(x=152,y=100)
+Label(root, text ='!!Choose!!',cursor="xterm", font ='times 20 bold underline', bg ='SlateBlue1',fg  = "blue").pack(pady=20)
 
 
 #define function
@@ -41,9 +40,9 @@ def speechtotext():
 
 
 #Button
-Button(root, text = "Text To Speech" , font = 'times 16 bold', cursor="hand2", command = texttospeech, bg = 'medium orchid',fg  = "white").place(x=137, y=150)
-Button(root,text = 'EXIT', cursor="hand2", font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").place(x=180 , y =250)
-Button(root, text = 'Speech To Text', cursor="hand2", font='times 16 bold', command = speechtotext, bg = 'medium orchid',fg  = "white").place(x=137,y=200)
+Button(root, text = "Text To Speech" , font = 'times 16 bold', cursor="hand2", command = texttospeech, bg = 'medium orchid',fg  = "white").pack(pady=10)
+Button(root, text = 'Speech To Text', cursor="hand2", font='times 16 bold', command = speechtotext, bg = 'medium orchid',fg  = "white").pack(pady=10)
+Button(root,text = 'EXIT', cursor="hand2", font = 'times 16 bold' ,relief=SUNKEN, command = Exit, bg = 'firebrick1',fg  = "yellow").pack(pady=10)
 
 
 #infinite loop to run program
